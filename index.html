@@ -4,33 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Worm Wrangler - Game Customization</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Worm Wrangler</title>
 </head>
 
 <body>
-    <h1>Welcome to Worm Wrangler - Game Customization</h1>
-    <!-- Glove Customization -->
-    <section class="gloves-customization">
-        <h2>Select your glove</h2>
-        <div class="glove-options">
-            <label for="leather">
-                <input type="radio" name="leather" value="leather" checked>
-                Leather Glove
-            </label>
-            <br>
-            <!-- Rubber -->
-            <label for="rubber">
-                <input type="radio" name="rubber" value="rubber">
-                Rubber Glove
-            </label>
-            <br>
-            <label for="cotton">
-                <input type="radio" name="cotton" value="cotton">
-                Cotton Glove
-            </label>
+    <h1>Worm Wrangler</h1>
+    <p>Welcome to the Worm Wrangler game! Use the arrow keys to move the worm and collect the apples.</p>
+    <div class="container">
+        <div class="inner-container-1">
+            <img src="./images/intro.png" alt="">
         </div>
-    </section>
+        <div class="inner-container-2">
+            <div class="gloveCustomizationArea">
+                <p>Customize your glove</p>
+                <div class="gloves">
+                    <div class="glove-image"></div>
+                    <div class="glove-image"></div>
+                    <div class="glove-image"></div>
+                </div>
+            </div>
+            <div class="goToGameButtonDiv"><button>Go To Game</button></div>
+            <div class="soundDiv">
+                <label for="sound">Sound</label>
+                <input type="checkbox" name="" id="">
+                <label for="volume"></label>
+                <input type="range" min="0" max="10" value="5">
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
