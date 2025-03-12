@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const updateGloveSelection = (gloveNumber) => {
         gloveImages.forEach(glove => {
             if (glove.dataset.glove === gloveNumber) {
-                glove.classList.add('bg-blue-200', 'ring-2', 'ring-blue-500');
-                glove.classList.remove('bg-gray-200');
+                glove.classList.add('bg-blue-100', 'border-blue-500');
+                glove.classList.remove('bg-gray-200', 'border-transparent');
             } else {
-                glove.classList.remove('bg-blue-200', 'ring-2', 'ring-blue-500');
-                glove.classList.add('bg-gray-200');
+                glove.classList.remove('bg-blue-100', 'border-blue-500');
+                glove.classList.add('bg-gray-200', 'border-transparent');
             }
         });
     };
@@ -31,13 +31,39 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle game button click
     const gameButton = document.querySelector('button');
     gameButton.addEventListener('click', () => {
-        window.location.href = 'gamePage.html';
+        window.location.href = './gamePage.html';
     });
 
     // Sound Controls
     const soundToggle = document.getElementById('sound');
     const volumeSlider = document.getElementById('volume');
     const volumeValue = document.getElementById('volumeValue');
+    const volumeContainer = volumeSlider.closest('.space-y-2');
+
+    // Function to toggle volume controls visibility with animation
+    const toggleVolumeControls = (isVisible) => {
+        console.log('Toggling volume controls:', isVisible);
+        if (isVisible) {
+            volumeContainer.style.display = 'block';
+            // Give browser time to register display change before animating
+            setTimeout(() => {
+                volumeContainer.style.opacity = '1';
+                volumeContainer.style.transform = 'translateY(0)';
+            }, 10);
+        } else {
+            volumeContainer.style.opacity = '0';
+            volumeContainer.style.transform = 'translateY(-10px)';
+            // Wait for animation to finish before hiding
+            setTimeout(() => {
+                volumeContainer.style.display = 'none';
+            }, 300);
+        }
+    };
+
+    // Make sure volume container has transition styles
+    volumeContainer.style.transition = 'all 0.3s ease-in-out';
+    volumeContainer.style.opacity = soundToggle.checked ? '1' : '0';
+    volumeContainer.style.transform = soundToggle.checked ? 'translateY(0)' : 'translateY(-10px)';
 
     // Load saved sound settings
     const savedSound = localStorage.getItem('soundEnabled');
@@ -47,9 +73,18 @@ document.addEventListener('DOMContentLoaded', () => {
     volumeSlider.value = savedVolume || 50;
     volumeValue.textContent = `${volumeSlider.value}%`;
 
+    // Set initial volume controls visibility
+    toggleVolumeControls(soundToggle.checked);
+
+    // After DOMContentLoaded
+    console.log('Initial toggle state:', soundToggle.checked);
+    console.log('Volume container display:', volumeContainer.style.display);
+
     // Update sound settings
     soundToggle.addEventListener('change', () => {
+        console.log('Toggle changed:', soundToggle.checked);
         localStorage.setItem('soundEnabled', soundToggle.checked);
+        toggleVolumeControls(soundToggle.checked);
     });
 
     volumeSlider.addEventListener('input', (e) => {

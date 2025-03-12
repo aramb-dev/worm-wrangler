@@ -5,24 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Worm Wrangler</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="./style.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap"
         rel="stylesheet">
-    <script src="javascript/introPage.js"></script>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                fontFamily: {
-                    'dm-sans': ['DM Sans', 'sans-serif'],
-                    'ibm-plex': ['IBM Plex Sans', 'sans-serif'],
-                }
-            }
-        }
-    </script>
 </head>
 
 <body class="font-dm-sans bg-gray-100 min-h-screen flex flex-col items-center justify-center p-8">
@@ -41,15 +30,15 @@
                 <div class="gloveCustomizationArea bg-white p-6 rounded-lg shadow">
                     <p class="font-ibm-plex text-xl mb-4">Customize your glove</p>
                     <div class="gloves grid grid-cols-3 gap-4">
-                        <div class="glove-image bg-gray-200 h-24 rounded flex items-center justify-center cursor-pointer hover:bg-blue-100 transition"
+                        <div class="glove-image bg-gray-200 h-24 rounded-lg flex items-center justify-center cursor-pointer hover:bg-blue-100 transition-all duration-200 border-2 border-transparent"
                             data-glove="1">
                             <img src="./images/openHand1.png" alt="Glove 1" class="w-full h-full object-contain p-2">
                         </div>
-                        <div class="glove-image bg-gray-200 h-24 rounded flex items-center justify-center cursor-pointer hover:bg-blue-100 transition"
+                        <div class="glove-image bg-gray-200 h-24 rounded-lg flex items-center justify-center cursor-pointer hover:bg-blue-100 transition-all duration-200 border-2 border-transparent"
                             data-glove="2">
                             <img src="./images/openHand2.png" alt="Glove 2" class="w-full h-full object-contain p-2">
                         </div>
-                        <div class="glove-image bg-gray-200 h-24 rounded flex items-center justify-center cursor-pointer hover:bg-blue-100 transition"
+                        <div class="glove-image bg-gray-200 h-24 rounded-lg flex items-center justify-center cursor-pointer hover:bg-blue-100 transition-all duration-200 border-2 border-transparent"
                             data-glove="3">
                             <img src="./images/openHand3.png" alt="Glove 3" class="w-full h-full object-contain p-2">
                         </div>
@@ -59,20 +48,20 @@
                 <div class="soundDiv bg-white p-6 rounded-lg shadow space-y-4">
                     <div class="flex items-center justify-between gap-4">
                         <label for="sound" class="font-medium text-gray-700">Sound</label>
-                        <div class="relative inline-flex items-center cursor-pointer">
-                            <input type="checkbox" id="sound" class="sr-only peer" checked>
+                        <label class="inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="sound" value="" class="sr-only peer" checked>
                             <div
-                                class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-500">
+                                class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
                             </div>
-                        </div>
+                        </label>
                     </div>
-                    <div class="space-y-2">
+                    <div class="space-y-2" style="transition: all 0.3s ease-in-out; overflow: hidden;">
                         <div class="flex items-center justify-between">
                             <label for="volume" class="font-medium text-gray-700">Volume</label>
                             <span id="volumeValue" class="text-sm text-gray-500">50%</span>
                         </div>
-                        <input type="range" id="volume" min="0" max="100" value="50"
-                            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-500 hover:accent-blue-600">
+                        <input id="volume" type="range" min="0" max="100" value="50"
+                            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600 hover:accent-blue-600">
                     </div>
                 </div>
             </div>
@@ -82,6 +71,9 @@
             <button class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition">Start Game</button>
         </div>
     </div>
+
+    <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script src="javascript/introPage.js"></script>
 </body>
 
 </html>
