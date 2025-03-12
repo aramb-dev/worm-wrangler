@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worm Wrangler</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: {
+                    'dm-sans': ['DM Sans', 'sans-serif'],
+                    'ibm-plex': ['IBM Plex Sans', 'sans-serif'],
+                },
+                cursor: {
+                    'custom': 'url("./images/openHand1.png") 25 25, auto',
+                    'custom-closed': 'url("./images/closeHand1.png") 25 25, auto'
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-dm-sans bg-gray-100 min-h-screen flex flex-col items-center p-8 cursor-custom">
+    <h1 class="font-ibm-plex text-4xl font-bold mb-8">Worm Wrangler</h1>
+    <div class="board w-full max-w-4xl">
+        <audio src="audio/hit.wav"></audio>
+        <audio src="audio/miss.wav"></audio>
+        <audio src="audio/completion.wav"></audio>
+        <div class="gameBoard grid grid-cols-3 gap-4 bg-white p-8 rounded-lg shadow-lg mb-8">
+            <div class="hole bg-gray-200 aspect-square rounded-full flex items-center justify-center">
+                <div class="worm w-3/4 h-3/4"></div>
+            </div>
+            <div class="hole bg-gray-200 aspect-square rounded-full flex items-center justify-center">
+                <div class="worm w-3/4 h-3/4"></div>
+            </div>
+            <div class="hole bg-gray-200 aspect-square rounded-full flex items-center justify-center">
+                <div class="worm w-3/4 h-3/4"></div>
+            </div>
+            <div class="hole bg-gray-200 aspect-square rounded-full flex items-center justify-center">
+                <div class="worm w-3/4 h-3/4"></div>
+            </div>
+            <div class="hole bg-gray-200 aspect-square rounded-full flex items-center justify-center">
+                <div class="worm w-3/4 h-3/4"></div>
+            </div>
+            <div class="hole bg-gray-200 aspect-square rounded-full flex items-center justify-center">
+                <div class="worm w-3/4 h-3/4"></div>
+            </div>
+            <div class="hole bg-gray-200 aspect-square rounded-full flex items-center justify-center">
+                <div class="worm w-3/4 h-3/4"></div>
+            </div>
+            <div class="hole bg-gray-200 aspect-square rounded-full flex items-center justify-center">
+                <div class="worm w-3/4 h-3/4"></div>
+            </div>
+            <div class="hole bg-gray-200 aspect-square rounded-full flex items-center justify-center">
+                <div class="worm w-3/4 h-3/4"></div>
+            </div>
+        </div>
+        <div class="scoreBoard bg-white p-6 rounded-lg shadow-lg space-y-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="scoreBoardText">Time: <span class="font-bold">0</span></div>
+                <div class="scoreBoardText">Score: <span class="font-bold">0</span></div>
+                <div class="scoreBoardText">Misses: <span class="font-bold">0</span></div>
+                <div class="scoreBoardText">Worms: <span class="font-bold">0</span></div>
+            </div>
+            <div class="flex justify-center gap-4">
+                <button
+                    class="start-button bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-400"
+                    aria-label="Start Game">
+                    Start Game
+                </button>
+                <button
+                    class="home-button bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    aria-label="Return Home">
+                    Home
+                </button>
+            </div>
+            <div class="tray h-16 bg-gray-200 rounded-lg mt-4"></div>
+        </div>
+    </div>
+    <script src="javascript/gamePageScript.js"></script>
+</body>
+
+</html>
