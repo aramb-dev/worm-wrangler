@@ -30,8 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Handle game button click
     const gameButton = document.querySelector('button');
-    gameButton.addEventListener('click', () => {
-        window.location.href = './gamePage.html';
+    gameButton.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent default button behavior
+        // Use absolute path with file extension
+        window.location.href = 'gamePage.html';
     });
 
     // Sound Controls
