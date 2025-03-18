@@ -13,6 +13,9 @@
         rel="stylesheet">
     <style>
         .gameBoard {
+            justify-content: center;
+            align-items: center;
+            align-content: center;
             max-width: 100%;
             max-height: 100%;
             width: 400px;
@@ -29,7 +32,7 @@
 
     <div class="flex flex-col items-center w-2/4 p-4">
         <h1 class="font-ibm-plex text-4xl font-bold mb-4">Worm Wrangler</h1>
-        <div class="board w-full">
+        <div class="board w-full justify-center items-center content-center flex">
             <audio src="../audio/hit.wav" preload="auto"></audio>
             <audio src="../audio/miss.wav" preload="auto"></audio>
             <audio src="../audio/completion.wav" preload="auto"></audio>
