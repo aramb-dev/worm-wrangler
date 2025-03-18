@@ -28,13 +28,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Handle game button click
-    const gameButton = document.querySelector('button');
-    gameButton.addEventListener('click', (e) => {
-        e.preventDefault(); // Prevent default button behavior
-        // Use absolute path with file extension
-        window.location.href = 'gamePage.html';
-    });
+    // Handle game button click - FIX: using anchor tag in the HTML
+    const gameButton = document.querySelector('a[href="gamePage.html"]');
+    if (gameButton) {
+        gameButton.addEventListener('click', (e) => {
+            // Keep the default behavior for the anchor tag
+            // The href attribute already handles navigation
+        });
+    }
 
     // Sound Controls
     const soundToggle = document.getElementById('sound');

@@ -1666,10 +1666,6 @@ input[type="range"]::-moz-range-thumb {
   margin-top: 0.5rem;
 }
 
-.mt-4 {
-  margin-top: 1rem;
-}
-
 .mt-8 {
   margin-top: 2rem;
 }
@@ -1706,24 +1702,12 @@ input[type="range"]::-moz-range-thumb {
   display: none;
 }
 
-.aspect-square {
-  aspect-ratio: 1 / 1;
-}
-
-.h-16 {
-  height: 4rem;
-}
-
 .h-2 {
   height: 0.5rem;
 }
 
 .h-24 {
   height: 6rem;
-}
-
-.h-3\/4 {
-  height: 75%;
 }
 
 .h-4 {
@@ -1748,10 +1732,6 @@ input[type="range"]::-moz-range-thumb {
 
 .w-11 {
   width: 2.75rem;
-}
-
-.w-3\/4 {
-  width: 75%;
 }
 
 .w-4 {
@@ -1820,10 +1800,6 @@ input[type="range"]::-moz-range-thumb {
   transform: none;
 }
 
-.cursor-custom {
-  cursor: url("./images/openHand1.png") 25 25, auto;
-}
-
 .cursor-default {
   cursor: default;
 }
@@ -1848,10 +1824,6 @@ input[type="range"]::-moz-range-thumb {
 
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
-}
-
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .grid-cols-3 {
@@ -1932,10 +1904,6 @@ input[type="range"]::-moz-range-thumb {
 
 .overflow-hidden {
   overflow: hidden;
-}
-
-.rounded {
-  border-radius: 0.25rem;
 }
 
 .rounded-full {
@@ -2019,11 +1987,6 @@ input[type="range"]::-moz-range-thumb {
 
 .bg-gray-900\/50 {
   background-color: rgb(17 24 39 / 0.5);
-}
-
-.bg-green-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(34 197 94 / var(--tw-bg-opacity, 1));
 }
 
 .bg-white {
@@ -2350,11 +2313,6 @@ input[type="range"]::-moz-range-thumb {
   background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
 }
 
-.hover\:bg-green-600:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(22 163 74 / var(--tw-bg-opacity, 1));
-}
-
 .hover\:bg-white:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
@@ -2401,19 +2359,9 @@ input[type="range"]::-moz-range-thumb {
   --tw-ring-color: rgb(147 197 253 / var(--tw-ring-opacity, 1));
 }
 
-.focus\:ring-blue-400:focus {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(96 165 250 / var(--tw-ring-opacity, 1));
-}
-
 .focus\:ring-gray-200:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(229 231 235 / var(--tw-ring-opacity, 1));
-}
-
-.focus\:ring-green-400:focus {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(74 222 128 / var(--tw-ring-opacity, 1));
 }
 
 .peer:checked ~ .peer-checked\:bg-blue-600 {
@@ -2452,10 +2400,6 @@ input[type="range"]::-moz-range-thumb {
 @media (min-width: 768px) {
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .md\:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 

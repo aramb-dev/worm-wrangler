@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tailwindcss -i ./input.css -o ./style.css",
+    "dev": "concurrently \"serve\" \"tailwindcss -i ./input.css -o ./style.css --watch\"",
     "watch": "tailwindcss -i ./input.css -o ./style.css --watch"
   },
   "repository": {
@@ -22,7 +23,9 @@
   "homepage": "https://github.com/aramb-dev/worm-wrangler#readme",
   "devDependencies": {
     "autoprefixer": "^10.4.x",
+    "concurrently": "^8.2.1",
     "postcss": "^8.4.x",
+    "serve": "^14.2.1",
     "tailwindcss": "^3.3.x"
   },
   "dependencies": {

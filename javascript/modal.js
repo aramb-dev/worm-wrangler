@@ -34,8 +34,9 @@ const modalStyles = `
   pointer-events: auto;
 }
 .modal_close{
-  float: right;
-  margin: -6px -4px 0 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
   background: white;
   cursor: pointer;
   font-size: 170%;
@@ -52,10 +53,6 @@ window.addEventListener('load', function(){
   var modals = [...document.getElementsByClassName('modal')];
   modals.forEach(function(modal){
     modal_box = modal.querySelector('.modal_box');
-    modal_box.insertAdjacentHTML('afterbegin', `<div id="close_`+modal.id+`" class="modal_close">&times;</div>`);
-    document.getElementById('close_'+modal.id).addEventListener('click', function(){
-      closeModal(modal);
-    });
     modal.addEventListener('click', function(e){
       closeModal(modal);
     });
@@ -73,3 +70,20 @@ function closeModal(modal){
   modal.setAttribute('aria-hidden', 'true');
   modal.classList.remove('open');
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const victoryModal = document.getElementById('victory_modal');
+    const closeVictoryModal = document.getElementById('close_victory_modal');
+    const restartButton = document.getElementById('restart_button');
+    const homeModalButton = document.getElementById('home_modal_button');
+
+    closeVictoryModal.addEventListener('click', () => closeModal(victoryModal));
+    restartButton.addEventListener('click', () => {
+        closeModal(victoryModal);
+        // Add logic to restart the game
+    });
+    homeModalButton.addEventListener('click', () => {
+        closeModal(victoryModal);
+        window.location.href = '../index.html';
+    });
+});

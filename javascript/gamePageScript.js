@@ -1,4 +1,56 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Add initial styles for holes and worms with more specific styling
+    const holes = document.querySelectorAll('.hole');
+    const worms = document.querySelectorAll('.worm');
+    const gameBoard = document.querySelector('.gameBoard');
+    const startButton = document.querySelector('.start-button');
+    const homeButton = document.querySelector('.home-button');
+
+    // Force specific styles on game elements
+    gameBoard.style.display = 'grid';
+    gameBoard.style.gridTemplateColumns = 'repeat(3, 1fr)';
+    gameBoard.style.gap = '1rem';
+
+    // Make sure buttons are visible
+    if (startButton) {
+        startButton.style.display = 'inline-block';
+        startButton.style.backgroundColor = '#10b981'; // green-500 equivalent
+        startButton.style.color = 'white';
+        startButton.style.padding = '0.5rem 1.5rem';
+        startButton.style.borderRadius = '0.25rem';
+    }
+
+    if (homeButton) {
+        homeButton.style.display = 'inline-block';
+        homeButton.style.backgroundColor = '#3b82f6'; // blue-500 equivalent
+        homeButton.style.color = 'white';
+        homeButton.style.padding = '0.5rem 1.5rem';
+        homeButton.style.borderRadius = '0.25rem';
+    }
+
+    holes.forEach(hole => {
+        hole.style.width = '100%';
+        hole.style.paddingBottom = '100%';
+        hole.style.position = 'relative';
+        hole.style.backgroundColor = '#e5e7eb'; // gray-200 equivalent
+        hole.style.borderRadius = '50%';
+        hole.style.display = 'block';
+    });
+
+    worms.forEach(worm => {
+        worm.style.position = 'absolute';
+        worm.style.top = '50%';
+        worm.style.left = '50%';
+        worm.style.transform = 'translate(-50%, -50%)';
+        worm.style.width = '75%';
+        worm.style.height = '75%';
+        worm.style.display = 'none'; // Initially hidden
+        worm.style.backgroundSize = 'contain';
+        worm.style.backgroundPosition = 'center';
+        worm.style.backgroundRepeat = 'no-repeat';
+        worm.style.borderRadius = '50%';
+    });
+
     // Get selected glove first to avoid reference errors
     const selectedGlove = localStorage.getItem('selectedGlove') || '1';
 
@@ -7,11 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Selected glove:', selectedGlove);
 
     // Game elements
-    const holes = document.querySelectorAll('.hole');
-    const worms = document.querySelectorAll('.worm');
     const tray = document.querySelector('.tray');
-    const startButton = document.querySelector('.start-button');
-    const homeButton = document.querySelector('.home-button');
     const scoreDisplay = document.querySelector('.scoreBoardText:nth-child(2) span');
     const missesDisplay = document.querySelector('.scoreBoardText:nth-child(3) span');
     const wormsDisplay = document.querySelector('.scoreBoardText:nth-child(4) span');
